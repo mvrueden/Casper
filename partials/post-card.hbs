@@ -6,6 +6,9 @@
     {{/if}}
     <div class="post-card-content">
         <a class="post-card-content-link" href="{{url}}">
+            {{#if featured}}
+                <span class="label label-primary">Featured</span>
+            {{/if}}
             <header class="post-card-header">
                 {{#if primary_tag}}
                     <span class="post-card-tags">{{primary_tag.name}}</span>
