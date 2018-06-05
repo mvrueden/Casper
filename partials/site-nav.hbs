@@ -1,3 +1,22 @@
+<style type="text/css">
+    .search-box{
+        margin-bottom: 10px;
+        color: black;
+    }
+
+    .search-results {
+        position:absolute;
+        width: 200px;
+        z-index: 1000;
+        background-color: whitesmoke;
+        top: 20px;
+    }
+
+    .results-hide {
+        display: none;
+    }
+</style>
+
 <nav class="site-nav">
     <div class="site-nav-left">
         {{^is "home"}}
@@ -20,5 +39,14 @@
                 <a class="social-link social-link-tw" href="{{twitter_url @blog.twitter}}" target="_blank">{{> "icons/twitter"}}</a>
             {{/if}}
         </div>
+    </div>
+
+</nav>
+<nav class="site-nav" style="overflow-y: visible">
+    <div class="search-box site-nav-left">
+        <input type="text" id="search-field" placeholder="Search for...">
+        <section class="search-results">
+            <ul id="search-results" class="search-results"></ul>
+        </section>
     </div>
 </nav>
