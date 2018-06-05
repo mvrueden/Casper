@@ -3,7 +3,7 @@ $("#search-field").ghostHunter({
     results: "#search-results",
     onKeyUp: true,
     displaySearchInfo: false,
-    result_template : "<a href='{{link}}'><li class='list-group-item'>{{title}}</li></a>",
+    result_template : "<a href='{{link}}'><li class='search-result-item'>{{title}}</li></a>",
     before: function(){
         $(".search-results").removeClass("results-hide");
     }
