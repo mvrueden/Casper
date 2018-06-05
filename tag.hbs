@@ -23,21 +23,19 @@
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
-
-
         <div class="post-feed">
-            {{#get "posts" filter="featured:true+tags:{{tag.slug}}" limit="all" as |featured|}}
+            {{#get "posts" filter="featured:true+tags:{{tag.slug}}" as |featured|}}
                 {{#foreach featured}}
                  {{> "post-card"}}
                 {{/foreach}}
             {{/get}}
 
-            {{#get "posts" filter="featured:false+tags:{{tag.slug}}" limit="all" as |post|}}
-                {{#foreach post}}
+            {{#foreach posts}}
+                {{^if featured}}
                     {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                     {{> "post-card"}}
-                {{/foreach}}
-            {{/get}}
+                {{/if}}
+            {{/foreach}}
         </div>
     </div>
 </main>
