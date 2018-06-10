@@ -121,6 +121,10 @@
     border-radius: .25em;
 }
 
+.label:empty {
+    display: none;
+}
+
 .label-default {
     background-color: #777;
 }
