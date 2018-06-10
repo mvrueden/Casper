@@ -3535,6 +3535,13 @@
         format      : function (t, d) {
             return t.replace(/{{([^{}]*)}}/g, function (a, b) {
                 var r = d[b];
+                if (Array.isArray(r)) { // if array, eg. tags
+                    if (r.length > 0) {
+                        return r[0];
+                    } else {
+                        return "";
+                    }
+                }
                 return typeof r === 'string' || typeof r === 'number' ? r : a;
             });
         }
